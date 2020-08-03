@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+		<title>ChartJS - Doughnut</title>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/Chart.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</head>
+	<body>
+		<div>
+			<header class="header">
+				<div class="market">
+					<button onclick="openMenu()">
+						&#9776;
+					</button>
+					<!-- <a href="index.html">sharemarket</a> -->
+				</div>	
+			</header>
+		</div>
+		<canvas id="mycanvas" width="256" height="256"></canvas>
+		
+		<aside class="sidebar">
+			<h3>Calculation</h3>
+			<button class="sidebar-close-button" onclick="closeMenu()">x</button>
+			<ul>
+				<form onsubmit="submit()" method="POST">
+					<div class="dropdown">
+						<select name="select" id="select">
+							<option value="AADR">AADR</option>
+							<option value="MFEM">MFEM</option>
+							<option value="JPEM">JPEM</option>
+							<option value="KEMQ">KEMQ</option>
+							<option value="KLDW">KLDW</option>
+							<option value="KOIN">KOIN</option>
+						  </select>
+					  </div>
+					<div>
+						<label for="price">Price</label>
+						<input id="price" name="price" type="number">
+					</div>
+					<div> 
+						<label for="quantity">Quantity</label>
+						<input id="quantity" name="quantity" type="number">
+					</div>
+					<div>
+						<label for="amount">Invested Amount</label>
+						<input id="amount" name="amount" type="number">
+					</div>
+					<div>
+						<input id="submit" name="submit" type="submit">
+					</div>
+					
+				</form>
+			</ul>
+
+		</aside>
+		<script>
+			function openMenu(){
+				document.querySelector(".sidebar").classList.add("open");
+            }
+            function closeMenu(){
+                document.querySelector(".sidebar").classList.remove("open");
+            }
+			function submit(){
+                document.querySelector(".sidebar").classList.remove("open");
+			}
+		</script>
+	</body>
+</html>
